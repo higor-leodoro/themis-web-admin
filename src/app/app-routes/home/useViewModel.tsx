@@ -7,12 +7,12 @@ import { useRouter } from "next/navigation";
 import useAuthStore from "@/stores/auth-store";
 
 export default function useViewModel() {
-  const { push } = useRouter();
+  const router = useRouter();
   const { isAuthenticated } = useAuthStore();
 
   useEffect(() => {
-    if (!isAuthenticated) return push("/auth-routes/signin");
-  }, [isAuthenticated, push]);
+    if (!isAuthenticated) return router.push("/auth-routes/signin");
+  }, [isAuthenticated, router]);
 
   return { isAuthenticated };
 }

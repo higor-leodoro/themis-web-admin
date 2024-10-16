@@ -43,9 +43,9 @@ export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
           </button>
         </div>
         <div className="flex flex-col gap-5 mt-10">
-          {menuOptions.map((option, key) => (
+          {menuOptions.map((option) => (
             <button
-              key={key}
+              key={option.id}
               className="flex items-center gap-5 transition-all duration-300"
               onClick={() => push(option.navigate)}
             >
