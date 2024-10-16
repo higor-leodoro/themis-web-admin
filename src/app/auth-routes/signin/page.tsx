@@ -7,8 +7,14 @@ import { Checkbox } from "@mui/material";
 import useViewModel from "./useViewModel";
 
 export default function SingIn() {
-  const { isChecked, handleRememberUser, handleLogin, handleForgotPassword } =
-    useViewModel();
+  const {
+    isChecked,
+    handleRememberUser,
+    handleLogin,
+    handleForgotPassword,
+    isPasswordVisible,
+    setIsPasswordVisible,
+  } = useViewModel();
 
   return (
     <div className="login-background-image h-screen overflow-hidden">
@@ -21,16 +27,38 @@ export default function SingIn() {
             <p className="font-semibold text-4xl text-themis-slate">Login</p>
           </div>
           <div className="flex flex-col mt-10 gap-8">
-            <input
-              className="border rounded-lg py-4 pl-4 font-bold"
-              type="text"
-              placeholder="Nome de usuário"
-            />
-            <input
-              className="border rounded-lg py-4 pl-4 font-bold"
-              type="text"
-              placeholder="Digite sua senha"
-            />
+            <div className="relative">
+              <input
+                className="border rounded-lg py-4 pl-4 pr-12 font-bold w-full"
+                type="text"
+                placeholder="Nome de usuário"
+              />
+              <Image
+                src="/icons/user-icon.svg"
+                width={20}
+                height={0}
+                alt="user icon"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2"
+              />
+            </div>
+            <div className="relative">
+              <input
+                className="border rounded-lg py-4 pl-4 pr-12 font-bold w-full"
+                type={isPasswordVisible ? "text" : "password"}
+                placeholder="Digite sua senha"
+              />
+              <button
+                className="absolute right-4 top-1/2 transform -translate-y-1/2"
+                onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+              >
+                <Image
+                  src="/icons/eye-off-icon.svg"
+                  width={23}
+                  height={0}
+                  alt="user icon"
+                />
+              </button>
+            </div>
           </div>
           <div className="mt-10">
             <MainButton

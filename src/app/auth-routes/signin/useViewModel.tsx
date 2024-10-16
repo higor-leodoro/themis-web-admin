@@ -9,6 +9,8 @@ export default function useViewModel() {
   const { setIsAuthenticated, isAuthenticated } = useAuthStore();
   const [isChecked, setIsChecked] = useState(false);
 
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
   const handleRememberUser = () => {
     setIsChecked(!isChecked);
   };
@@ -24,5 +26,12 @@ export default function useViewModel() {
     push("/auth-routes/forgot-password");
   };
 
-  return { isChecked, handleRememberUser, handleLogin, handleForgotPassword };
+  return {
+    isChecked,
+    handleRememberUser,
+    handleLogin,
+    handleForgotPassword,
+    isPasswordVisible,
+    setIsPasswordVisible,
+  };
 }

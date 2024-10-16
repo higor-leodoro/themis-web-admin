@@ -10,7 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         "themis-orange": "#F97615",
+        "themis-green": "#29A340",
+        "themis-light-gray": "#ECECEC",
+        "themis-medium-gray": "#5C5C5C",
+        "themis-dark": "#2B2B2B",
         "themis-slate": "#404A59",
+        "themis-text-gray": "#343434",
       },
     },
   },
