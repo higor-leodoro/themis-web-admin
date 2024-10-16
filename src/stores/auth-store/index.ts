@@ -6,7 +6,7 @@ interface AuthStoreProps {
 }
 
 const useAuthStore = create<AuthStoreProps>((set) => ({
-  isAuthenticated: true,
+  isAuthenticated: false,
   setIsAuthenticated: (isAuthenticated) =>
     set({ isAuthenticated: isAuthenticated }),
 }));

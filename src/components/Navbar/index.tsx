@@ -3,6 +3,8 @@ import Image from "next/image";
 import menuOptions from "./menuOptions";
 import { Dispatch, SetStateAction } from "react";
 
+import useAuthStore from "@/stores/auth-store";
+
 interface NavbarProps {
   isExpanded: boolean;
   setIsExpanded: Dispatch<SetStateAction<boolean>>;
@@ -10,6 +12,7 @@ interface NavbarProps {
 
 export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
   const { push } = useRouter();
+  const { setIsAuthenticated } = useAuthStore();
   const pathname = usePathname();
 
   return (
@@ -62,7 +65,10 @@ export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
           ))}
         </div>
       </div>
-      <button className="flex items-center gap-5">
+      <button
+        className="flex items-center gap-5"
+        onClick={() => setIsAuthenticated(false)}
+      >
         <div className="bg-white w-10 h-10 rounded-full flex justify-center items-center">
           <Image
             src="/icons/logout-icon.svg"
