@@ -12,7 +12,7 @@ export default function useViewModel() {
 
   useEffect(() => {
     if (!isAuthenticated) return push("/auth-routes/signin");
-  }, [isAuthenticated]);
+  }, [isAuthenticated, push]);
 
   return { isAuthenticated };
 }

@@ -45,11 +45,11 @@ export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
         <div className="flex flex-col gap-5 mt-10">
           {menuOptions.map((option, key) => (
             <button
+              key={key}
               className="flex items-center gap-5 transition-all duration-300"
               onClick={() => push(option.navigate)}
             >
               <div
-                key={key}
                 className={`${
                   pathname === option.routeName ? "bg-orange-300" : "bg-white"
                 } w-10 h-10 rounded-full flex justify-center items-center`}
