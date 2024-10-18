@@ -17,7 +17,7 @@ export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
 
   return (
     <div
-      className={`bg-themis-orange h-screen flex flex-col justify-between py-8 transition-all duration-300 ${
+      className={`bg-themis-orange h-screen flex flex-col justify-between py-8 transition-all duration-300 ease-in-out ${
         isExpanded ? "w-52 items-start pl-4" : "w-20 items-center"
       } `}
     >
@@ -28,7 +28,7 @@ export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
             alt="logo"
             width={isExpanded ? 157 : 41}
             height={0}
-            className="transition-all duration-300"
+            className="transition-all duration-300 ease-in-out"
           />
           <button onClick={() => setIsExpanded(!isExpanded)}>
             <Image
@@ -36,7 +36,7 @@ export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
               alt="icon"
               width={30}
               height={0}
-              className={`absolute transition-all duration-300 ${
+              className={`absolute transition-all duration-300 ease-in-out ${
                 isExpanded ? "left-44 rotate-180" : "left-11"
               } top-6 transform -translate-y-1/2`}
             />
@@ -46,7 +46,7 @@ export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
           {menuOptions.map((option) => (
             <button
               key={option.id}
-              className="flex items-center gap-5 transition-all duration-300"
+              className="flex items-center gap-5 transition-all duration-300 ease-in-out"
               onClick={() => push(option.navigate)}
             >
               <div
@@ -57,7 +57,7 @@ export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
                 <Image src={option.icon} width={26} height={0} alt="icon" />
               </div>
               {isExpanded && (
-                <span className="font-medium text-lg text-white transition-all duration-300">
+                <span className="font-medium text-lg text-white transition-all duration-300 ease-in-out">
                   {option.name}
                 </span>
               )}
@@ -78,7 +78,7 @@ export default function Navbar({ isExpanded, setIsExpanded }: NavbarProps) {
           />
         </div>
         {isExpanded && (
-          <span className="font-medium text-lg text-white transition-all duration-300">
+          <span className="font-medium text-lg text-white transition-all duration-300 ease-in-out">
             Sair
           </span>
         )}

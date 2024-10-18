@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { useRouter } from "next/navigation";
 
@@ -10,9 +10,11 @@ export default function useViewModel() {
   const router = useRouter();
   const { isAuthenticated } = useAuthStore();
 
+  const [visualizeList, setVisualizeList] = useState(false);
+
   useEffect(() => {
     if (!isAuthenticated) return router.push("/auth-routes/signin");
   }, [isAuthenticated, router]);
 
-  return { isAuthenticated };
+  return { isAuthenticated, visualizeList, setVisualizeList };
 }
