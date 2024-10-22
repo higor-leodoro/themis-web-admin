@@ -44,7 +44,7 @@ export default function Home() {
             </button>
           </div>
           <div>
-            <GreenActionButton text="+ Novo registro" />
+            <GreenActionButton title="+ Novo registro" />
           </div>
         </div>
         <div className="flex items-center gap-2">
