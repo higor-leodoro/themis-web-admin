@@ -7,10 +7,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import menuOptions from "./menuOptions";
 
 import useAuthStore from "@/stores/auth-store";
+import useScreenNameStore from "@/stores/screen-name-store";
 
 export default function Navbar() {
-  const { push } = useRouter();
   const { setIsAuthenticated } = useAuthStore();
+  const { setScreenName } = useScreenNameStore();
+  const { push } = useRouter();
   const pathname = usePathname();
 
   const [isExpanded, setIsExpanded] = useState(false);
@@ -54,7 +56,17 @@ export default function Navbar() {
                     setIsExpanded(true);
                     setShowSubRoute(!showSubRoute);
                     setSelectedMenu(option.id);
+                    setScreenName({
+                      menuItemPage: "Cadastros",
+                      itemPage: "",
+                      screenName: "",
+                    });
                   } else {
+                    setScreenName({
+                      menuItemPage: option.name,
+                      itemPage: option.pageName,
+                      screenName: option.pageName,
+                    });
                     push(option.navigate);
                     setSelectedMenu(option.id);
                     setShowSubRoute(false);
@@ -93,12 +105,21 @@ export default function Navbar() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      {option.subRoutes?.map((route) => (
+                      {option.subRoutes?.map((route, index) => (
                         <button
                           key={route.id}
                           onClick={() => {
                             push(route.navigate);
                             setSelectedMenu(option.id);
+                            const subRoutesMap = option.subRoutes?.map(
+                              (route) => route.pageName
+                            );
+                            console.log(subRoutesMap);
+                            setScreenName({
+                              menuItemPage: "Cadastros",
+                              itemPage: subRoutesMap[index],
+                              screenName: subRoutesMap[index],
+                            });
                           }}
                         >
                           <p

@@ -20,6 +20,8 @@ const config: Config = {
         "themis-text-gray": "#343434",
         "themis-text-light-gray": "#989898",
         "themis-border": "#B9B9B9",
+        "themis-near-black": "#1E1E1E",
+        "themis-silver": "#9A9A9A",
       },
     },
   },

@@ -5,6 +5,7 @@ const menuOptions = [
     routeName: "/app-routes/home",
     icon: "/icons/document-icon.svg",
     navigate: "/app-routes/home",
+    pageName: "Inicio",
   },
   {
     id: "2",
@@ -15,13 +16,26 @@ const menuOptions = [
         name: "Usuários",
         routeName: "/app-routes/users",
         navigate: "/app-routes/users",
+        pageName: "Cadastro de usuários",
       },
-      { id: "2", name: "Grupos", navigate: "" },
-      { id: "3", name: "Unidades", navigate: "" },
+      {
+        id: "2",
+        name: "Grupos",
+        routeName: "/app-routes/groups",
+        navigate: "/app-routes/groups",
+        pageName: "Cadastro de grupos",
+      },
+      {
+        id: "3",
+        name: "Unidades",
+        routeName: "/app-routes/units",
+        navigate: "/app-routes/units",
+        pageName: "Cadastro de unidades",
+      },
     ],
     routeName: "Cadastros",
     icon: "/icons/users-icon.svg",
-    navigate: "/app-routes/users",
+    navigate: "",
   },
   {
     id: "3",
@@ -29,6 +43,7 @@ const menuOptions = [
     routeName: "/app-routes/signature",
     icon: "/icons/pencil-icon.svg",
     navigate: "/app-routes/signature",
+    pageName: "Assinar",
   },
   {
     id: "4",
@@ -36,6 +51,7 @@ const menuOptions = [
     routeName: "/app-routes/financial",
     icon: "/icons/sipher-icon.svg",
     navigate: "/app-routes/financial",
+    pageName: "Dashboard financeiro",
   },
   {
     id: "5",
@@ -43,6 +59,7 @@ const menuOptions = [
     routeName: "/app-routes/settings",
     icon: "/icons/gear-icon.svg",
     navigate: "/app-routes/settings",
+    pageName: "Configurações",
   },
 ];
 
