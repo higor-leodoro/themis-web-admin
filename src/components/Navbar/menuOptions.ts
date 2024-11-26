@@ -8,8 +8,18 @@ const menuOptions = [
   },
   {
     id: "2",
-    name: "Usuários",
-    routeName: "/app-routes/users",
+    name: "Cadastros",
+    subRoutes: [
+      {
+        id: "1",
+        name: "Usuários",
+        routeName: "/app-routes/users",
+        navigate: "/app-routes/users",
+      },
+      { id: "2", name: "Grupos", navigate: "" },
+      { id: "3", name: "Unidades", navigate: "" },
+    ],
+    routeName: "Cadastros",
     icon: "/icons/users-icon.svg",
     navigate: "/app-routes/users",
   },
