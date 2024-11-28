@@ -11,7 +11,7 @@ export default function Header() {
     useScreenNameStore();
 
   return (
-    <div className="flex justify-between items-center p-6 border-b shadow-md">
+    <div className="flex justify-between items-center px-6 py-2 border-b shadow-md">
       <div>
         <p className="text-xs text-slate-400">
           {menuItemPage} / {itemPage}

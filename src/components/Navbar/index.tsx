@@ -17,7 +17,7 @@ export default function Navbar() {
 
   const [isExpanded, setIsExpanded] = useState(false);
   const [showSubRoute, setShowSubRoute] = useState(false);
-  const [selectedMenu, setSelectedMenu] = useState("");
+  const [selectedMenu, setSelectedMenu] = useState("1");
 
   return (
     <div
@@ -86,9 +86,10 @@ export default function Navbar() {
                 </div>
                 {isExpanded && (
                   <span
-                    className={`font-medium text-left pl-4 text-lg w-32 rounded-e-2xl py-1 text-white transition-all duration-700 ease-in-out ${
-                      selectedMenu === option.id &&
-                      "bg-orange-300 text-[#212121]"
+                    className={`font-medium text-left pl-4 text-lg w-32 rounded-e-2xl py-1 text-white transition-all duration-300 ease-in-out ${
+                      selectedMenu === option.id
+                        ? "bg-orange-300 text-themis-near-black"
+                        : ""
                     }`}
                   >
                     {option.name}
@@ -114,7 +115,6 @@ export default function Navbar() {
                             const subRoutesMap = option.subRoutes?.map(
                               (route) => route.pageName
                             );
-                            console.log(subRoutesMap);
                             setScreenName({
                               menuItemPage: "Cadastros",
                               itemPage: subRoutesMap[index],
