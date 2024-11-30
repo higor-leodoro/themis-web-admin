@@ -2,15 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   outline: none;
 }
 
+input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .login-background-image {
-  background-image: url('/images/login-screen/background.png'); 
-  background-size: contain; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  height: 100vh; 
-  width: 100%; 
+  background-image: url("/images/login-screen/background.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
 }

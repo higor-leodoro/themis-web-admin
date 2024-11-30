@@ -86,11 +86,11 @@ export default function Navbar() {
                 </div>
                 {isExpanded && (
                   <span
-                    className={`font-medium text-left pl-4 text-lg w-32 rounded-e-2xl py-1 text-white transition-all duration-300 ease-in-out ${
+                    className={`font-medium text-left pl-4 text-lg w-32 rounded-e-2xl py-1 ${
                       selectedMenu === option.id
-                        ? "bg-orange-300 text-themis-near-black"
-                        : ""
-                    }`}
+                        ? "text-themis-dark bg-orange-300"
+                        : "text-white"
+                    }  transition-all duration-300 ease-in-out`}
                   >
                     {option.name}
                   </span>
@@ -125,7 +125,7 @@ export default function Navbar() {
                           <p
                             className={`${
                               pathname === route.routeName
-                                ? "text-[#212121]"
+                                ? "text-[#212121] font-medium"
                                 : "text-white"
                             } text-left`}
                           >
